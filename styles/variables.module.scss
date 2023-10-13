@@ -1,0 +1,32 @@
+$primary-color: #64ff00;
+
+:export {
+  primaryColor: $primary-color;
+}
+
+$page-max-width: 90rem;
+$flex_shrink: 0;
+
+//colors
+$color-primary-100: #f44800;
+$color-primary-80: #f05413;
+$color-primary-60: #ed7644;
+$color-primary-40: #e9a68a;
+$color-primary-20: #eac8b9;
+
+$color-secondary-100: #5915ca;
+$color-secondary-80: #625fda;
+$color-secondary-60: #9d9be2;
+$color-secondary-40: #cac9ee;
+$color-secondary-20: #eef;
+
+$color-neutral-100: #121212;
+$color-neutral-90: #2a2a2a;
+$color-neutral-80: #414141;
+$color-neutral-70: #5a5a5a;
+$color-neutral-60: #717171;
+$color-neutral-50: #898989;
+$color-neutral-40: #a0a0a0;
+$color-neutral-30: #b8b8b8;
+$color-neutral-20: #d0d0d0;
+$color-neutral-0: #ffffff;
