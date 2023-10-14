@@ -13,8 +13,7 @@ import MyValues from "@/components/values";
 
 export default function Home() {
   return (
-    <SiteLayout>
-      <Header />
+    <>
       <Hero />
       <Mission />
       <MyValues />
@@ -24,7 +23,6 @@ export default function Home() {
       <RecentBlogPost />
       <Testimonials />
       <Clients />
-      <Footer />
-    </SiteLayout>
+    </>
   );
 }

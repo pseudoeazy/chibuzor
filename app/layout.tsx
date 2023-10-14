@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/header";
+import SiteLayout from "@/components/site-layout";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +30,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <SiteLayout>
+            <Header />
+            {children}
+            <Footer />
+          </SiteLayout>
         </ThemeProvider>
       </body>
     </html>

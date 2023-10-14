@@ -7,7 +7,6 @@ import { raleway } from "@/styles/font";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import myServices from "@/constants/my-services";
-import { usePathname } from "next/navigation";
 
 export default function Services() {
   const [currentPage, setCurrentPage] = useState(1);
