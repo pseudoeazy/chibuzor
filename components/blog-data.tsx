@@ -14,7 +14,7 @@ const BlogData: React.FC<Props> = ({ blogs }) => {
     <>
       {blogs.map((blog, idx) => (
         <Card className="border" key={idx}>
-          <CardContent className="grid gap-4 p-0">
+          <CardContent className="grid gap-4 text-center p-0">
             <div className="relative w-full h-96">
               <Image src={blog.thumbnail} fill={true} alt="project" />
             </div>
@@ -24,8 +24,10 @@ const BlogData: React.FC<Props> = ({ blogs }) => {
               </div>
 
               <small>{blog?.pubDate}</small>
-              <Button className="w-[18rem] rounded-none font-bold uppercase text-base p-5 text-center bg-tetiary-100 text-black hover:text-tetiary-100">
-                <Link href={`/blog/${blog.title}`}>Read More</Link>
+              <Button className="w-[18rem] mx-auto rounded-none font-bold uppercase text-base p-5 text-center bg-tetiary-100 text-black hover:text-tetiary-100">
+                <a href={`${blog.link}`} target="_blank" rel="noreferrer">
+                  Read More
+                </a>
               </Button>
             </div>
           </CardContent>

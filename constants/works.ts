@@ -3,7 +3,7 @@ import Work from "@/types/work";
 const works: Work[] = [
   {
     id: 1,
-    title: "Salesprit",
+    title: "Eazy Pomodoro extension",
     overview: `A cutting-edge Next.js Ecommerce Template for smooth online shopping experience.`,
     description: ``,
     imageURL: "salesprit.png",
@@ -19,6 +19,31 @@ const works: Work[] = [
   },
   {
     id: 3,
+    title: "Eazy Ai Extension",
+    overview: `Let AI do the hard work for you, image generation, music generation, video generation, ask Ai anything. `,
+    description: ``,
+    imageURL: "whitbylimo.png",
+    url: `https://whitbylimo.ca/`,
+  },
+  {
+    id: 4,
+    title: "Web to Cloud",
+    overview: `save files from the internet and convert different file formats on your computer and save to cloud`,
+    description: ``,
+    imageURL: "whitbylimo.png",
+    url: `https://whitbylimo.ca/`,
+  },
+  {
+    id: 5,
+    title: "Salesprit",
+    overview: `A cutting-edge Next.js Ecommerce Template for smooth online shopping experience.`,
+    description: ``,
+    imageURL: "salesprit.png",
+    url: `https://salesprit.vercel.app/`,
+  },
+
+  {
+    id: 6,
     title: "Hanna Solar",
     overview: `Transformed and HTML Template into a Next.js Application. Hanna Solar is an headless CMS, powered by WordPress API and Custom API built with Nest.js`,
     description: ``,
@@ -26,7 +51,15 @@ const works: Work[] = [
     url: "https://www.hannasolar.com/",
   },
   {
-    id: 4,
+    id: 7,
+    title: "Ai Template",
+    overview: `Transformed and HTML Template into a Next.js Application. Hanna Solar is an headless CMS, powered by WordPress API and Custom API built with Nest.js`,
+    description: ``,
+    imageURL: "hannasolar.png",
+    url: "https://www.hannasolar.com/",
+  },
+  {
+    id: 8,
     title: " Airport Taxi Service Barrie",
     overview: `Transformed an existing HTML template into a dynamic WordPress theme tailored for airport pickup services.`,
     description: ``,
@@ -34,7 +67,15 @@ const works: Work[] = [
     url: `https://airporttaxiservicebarrie.com`,
   },
   {
-    id: 5,
+    id: 9,
+    title: " Modern Landing page",
+    overview: `Figma to HTML`,
+    description: ``,
+    imageURL: "airporttaxiservicebarrie.png",
+    url: `https://airporttaxiservicebarrie.com`,
+  },
+  {
+    id: 10,
     title: "template",
     overview: `Built a custom plugin that harmonizes with diverse WordPress themes, ensuring visual consistency and optimal performance`,
     description: ``,
@@ -42,7 +83,15 @@ const works: Work[] = [
     url: `https://airportlimoancaster.com/`,
   },
   {
-    id: 6,
+    id: 11,
+    title: "Modern Template ",
+    overview: `From Figma to Next.js Template`,
+    description: ``,
+    imageURL: "airportlimoancaster.png",
+    url: `https://airportlimoancaster.com/`,
+  },
+  {
+    id: 12,
     title: "Courticelimo",
     overview: `WordPress Powered Site done with an HTML Template for Airport Pickup`,
     description: ``,
@@ -50,7 +99,7 @@ const works: Work[] = [
     url: "https://courticelimo.com",
   },
   {
-    id: 7,
+    id: 13,
     title: "Gosheny",
     overview: `A dropshipping Platform built with Next.js and Nest.js as designed from Figma`,
     description: ``,

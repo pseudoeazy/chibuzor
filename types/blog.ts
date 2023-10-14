@@ -4,4 +4,5 @@ export interface Blog {
   content: string;
   pubDate: string;
   thumbnail: string;
+  link: string;
 }

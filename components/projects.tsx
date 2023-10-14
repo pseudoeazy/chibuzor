@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,7 +7,17 @@ import Container from "@/components/container";
 import Image from "next/image";
 
 import works from "@/constants/works";
+import { usePathname } from "next/navigation";
 export default function Projects() {
+  const pathname = usePathname();
+
+  let myProjects = works;
+
+  const isHome = pathname === "/";
+  if (isHome) {
+    myProjects = works.slice(0, 4);
+  }
+
   return (
     <Container className="px-36 my-36">
       <section>
@@ -17,7 +28,7 @@ export default function Projects() {
             projects
           </h2>
           <div className="grid grid-cols-2 gap-5">
-            {works.map((work, idx) => (
+            {myProjects.map((work, idx) => (
               <Card className="max-w-[35rem] border-0" key={idx}>
                 <CardContent className="grid gap-4 p-0">
                   <div className="relative w-full h-96">

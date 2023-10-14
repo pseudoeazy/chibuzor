@@ -8,12 +8,17 @@ import ErrorList from "@/components/alerts/error-list";
 import Success from "@/components/alerts/sucess";
 import Error from "@/components/alerts/error";
 import { raleway } from "@/styles/font";
+import { cn } from "@/lib/utils";
 
 type ContactForm = {
   message: string;
   email: string;
 };
-export default function Contact() {
+
+type Props = {
+  bgColor?: string;
+};
+export default function Contact({ bgColor }: Props) {
   const [isSubmit, setIsSubmit] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -66,7 +71,12 @@ export default function Contact() {
     }
   };
   return (
-    <Container className="bg-tetiary-100 min-h-screen flex items-center  justify-center">
+    <Container
+      className={cn(
+        "bg-tetiary-100 min-h-screen flex items-center  justify-center",
+        bgColor
+      )}
+    >
       <section id="contact" className="w-full flex flex-col items-center">
         <h2 className={`mb-12 text-5xl font-bold  ${raleway.className}`}>
           Let&#39;s have a chat

@@ -4,42 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/container";
 import { raleway } from "@/styles/font";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Code,
-  Figma,
-  Presentation,
-  ToyBrick,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const myServices = [
-  {
-    icon: Code,
-    imageUrl: "web.jpg",
-    title: "web development",
-    path: "/service#web-dev",
-  },
-  {
-    icon: ToyBrick,
-    imageUrl: "chrome.jpg",
-    title: "chrome extension",
-    path: "/service#chrome",
-  },
-  {
-    icon: Figma,
-    imageUrl: "chrome.jpg",
-    title: "Figma To HTML",
-    path: "/service#chrome",
-  },
-  {
-    icon: Presentation,
-    imageUrl: "chrome.jpg",
-    title: "WordPress Plugin",
-    path: "/service#chrome",
-  },
-];
+import myServices from "@/constants/my-services";
+import { usePathname } from "next/navigation";
 
 export default function Services() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -55,6 +23,7 @@ export default function Services() {
   const handlePrevious = () => {
     setCurrentPage((page) => page - 1);
   };
+
   return (
     <Container className="px-36">
       <section>

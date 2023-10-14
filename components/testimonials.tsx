@@ -63,7 +63,9 @@ export default function Testimonials() {
                   </div>
                 </div>
                 <div className="pt-10">
-                  <p className="text-lg font-light">{testimony.testimony}</p>
+                  <p className="text-lg font-light h-44 overflow-y-scroll scrollbar">
+                    {testimony.testimony}
+                  </p>
                 </div>
               </div>
             </div>

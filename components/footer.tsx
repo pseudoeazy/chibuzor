@@ -29,7 +29,7 @@ const menus = [
 const year = new Date().getFullYear();
 export default function Footer() {
   return (
-    <Container className="px-36">
+    <Container className="p-36">
       <footer className="flex space-x-36">
         <div className="flex flex-col min-h-[22rem] ">
           <div
