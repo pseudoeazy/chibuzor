@@ -44,6 +44,9 @@ export default function Header() {
     setIsMounted(true);
   }, []);
 
+  function handleToggleMode() {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
   return (
     <Container>
       <header>
@@ -70,9 +73,7 @@ export default function Header() {
                   <Button
                     variant="outline"
                     size="icon"
-                    onClick={() =>
-                      setTheme(theme === "dark" ? "light" : "dark")
-                    }
+                    onClick={handleToggleMode}
                   >
                     {theme === "light" ? (
                       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
