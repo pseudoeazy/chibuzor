@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@/components/container";
 import { raleway } from "@/styles/font";
 import { ChevronLeft, ChevronRight, User2 } from "lucide-react";
@@ -35,7 +35,8 @@ const testimonies = [
 
 export default function Testimonials() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(isMobile() ? 1 : 2); // Number of items to display per page
+  const [isMounted, setIsMounted] = useState(false);
+  const [itemsPerPage, setItemsPerPage] = useState(2); // Number of items to display per page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = testimonies.slice(indexOfFirstItem, indexOfLastItem);
@@ -47,6 +48,11 @@ export default function Testimonials() {
   const handlePrevious = () => {
     setCurrentPage((page) => page - 1);
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+    setItemsPerPage(isMobile() ? 1 : 2);
+  }, []);
   return (
     <Container className="px-4 lg:px-36 my-36">
       <section>
