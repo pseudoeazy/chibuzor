@@ -8,6 +8,7 @@ import Image from "next/image";
 
 import works from "@/constants/works";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 export default function Projects() {
   const pathname = usePathname();
 
@@ -19,7 +20,7 @@ export default function Projects() {
   }
 
   return (
-    <Container className="px-36 my-36">
+    <Container className="px-4 lg:px-36 my-36">
       <section>
         <div>
           <h2
@@ -27,9 +28,9 @@ export default function Projects() {
           >
             projects
           </h2>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {myProjects.map((work, idx) => (
-              <Card className="max-w-[35rem] border-0" key={idx}>
+              <Card className="lg:max-w-[35rem] border-0" key={idx}>
                 <CardContent className="grid gap-4 p-0">
                   <div className="relative w-full h-96">
                     <Image
@@ -48,7 +49,7 @@ export default function Projects() {
                       {work.overview}
                     </p>
                     <Button className="w-[18rem] rounded-none font-bold uppercase text-base p-5 text-center bg-tetiary-100 text-black hover:text-tetiary-100">
-                      Read More
+                      <Link href={`projects/${work.id}`}>Read More</Link>
                     </Button>
                   </div>
                 </CardContent>

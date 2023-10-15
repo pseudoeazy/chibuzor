@@ -10,7 +10,7 @@ import { Badge } from "./ui/badge";
 export default function AboutHero() {
   const router = useRouter();
   return (
-    <Container className="pl-36 mt-20 mb-36">
+    <Container className="px-4 lg:pl-36  mt-20 lg:mb-36 mb-8">
       <section className="flex flex-col lg:flex-row">
         <div className="flex-1">
           <div className="lg:max-w-[26.75rem] pt-8 space-y-12">

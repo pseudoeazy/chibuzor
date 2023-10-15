@@ -6,15 +6,15 @@ import myServices from "@/constants/my-services";
 
 export default function MyServices() {
   return (
-    <Container className="px-36 my-36">
+    <Container className="px-4 md:px-36 my-36">
       <section className="w-full space-y-24">
         {myServices.map((service, idx) => (
           <div
             key={idx}
-            className="w-full flex  justify-between"
+            className="w-full flex flex-col lg:flex-row  lg:justify-between"
             id={service.id}
           >
-            <div className="relative w-[34rem] h-[24rem]">
+            <div className="relative lg:w-[34rem] h-[24rem]">
               <Image
                 src={`/images/${service.imageUrl}`}
                 alt={`${service.title}`}

@@ -11,7 +11,11 @@ const socials = [
     icon: Twitter,
     url: "https://twitter.com/pseudoeazy",
   },
-  { title: "github", icon: Github, url: "https://github.com/pseudoeazy" },
+  {
+    title: "github",
+    icon: Github,
+    url: "https://github.com/pseudoeazy",
+  },
 ];
 export default function SocialMedia() {
   return (

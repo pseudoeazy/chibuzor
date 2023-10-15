@@ -4,7 +4,6 @@ import React from "react";
 import Container from "@/components/container";
 import { raleway } from "@/styles/font";
 import { Brush, Trophy, Users2 } from "lucide-react";
-import SideTitle from "./side-title";
 
 const myValues = [
   {
@@ -22,10 +21,16 @@ const myValues = [
 ];
 export default function MyValues() {
   return (
-    <Container className="flex justify-center  my-36 min-h-[22rem]">
-      <section className="flex ">
-        <SideTitle />
-        <div className="flex-1 flex space-x-4 self-end">
+    <Container className="flex justify-center  mt-8 mb-36 lg:my-36 min-h-[22rem]">
+      <section className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
+        <div className="flex-1 w-full  pt-36">
+          <h2
+            className={`text-2xl font-bold uppercase  lg:rotate-[270deg] ${raleway.className}`}
+          >
+            Values
+          </h2>
+        </div>
+        <div className="flex-1 flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 self-end ">
           {myValues.map((myValue) => (
             <div
               key={myValue.label}

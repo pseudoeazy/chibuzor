@@ -7,33 +7,8 @@ import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Container from "@/components/container";
-
-const menus = [
-  {
-    label: "home",
-    path: "/",
-  },
-  {
-    label: "services",
-    path: "/services",
-  },
-  {
-    label: "projects",
-    path: "/projects",
-  },
-  {
-    label: "blog",
-    path: "/blog",
-  },
-  {
-    label: "about",
-    path: "/about",
-  },
-  {
-    label: "contact",
-    path: "/contact",
-  },
-];
+import menus from "@/constants/menus";
+import MobileMenu from "@/components/mobile/mobile-menu";
 
 export default function Header() {
   const pathname = usePathname();
@@ -50,8 +25,8 @@ export default function Header() {
   return (
     <Container>
       <header>
-        <nav className="flex justify-center items-center pt-20">
-          <ul className="max-w-[56rem] flex px-20 space-x-16 bg-zinc-950 dark:bg-white">
+        <nav className="hidden lg:flex justify-center items-center md:pt-20">
+          <ul className="w-full md:max-w-[56rem] md:flex md:px-20 space-x-16 bg-zinc-950 dark:bg-white">
             {menus.map((menu) => (
               <li key={menu.path} className="flex items-center">
                 <Link
@@ -86,6 +61,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+        <MobileMenu />
       </header>
     </Container>
   );

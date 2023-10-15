@@ -4,6 +4,7 @@ import Container from "@/components/container";
 import { raleway } from "@/styles/font";
 import { ChevronLeft, ChevronRight, User2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { isMobile } from "@/lib/utils";
 
 const testimonies = [
   {
@@ -17,20 +18,24 @@ const testimonies = [
   {
     id: 2,
     testimony: `
-  I wanted to rebuild a modern web application that was fast
-  Chibuzor suggested we used Next.js rather than PHP and now my website loads like a charm.`,
-    user: "CEO Gosheny",
+    We enjoyed working with him and will likely have additional jobs for him in the future`,
+    user: "Upwork Client",
   },
   {
     id: 3,
-    testimony: `Israel you can build anything.`,
+    testimony: `Eazy you can build anything. Thank you for the help on my websites.`,
     user: "Owner Airport-Limo Ancaster",
+  },
+  {
+    id: 4,
+    testimony: `Thank you for your help on our project :-)`,
+    user: "Upwork Client",
   },
 ];
 
 export default function Testimonials() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(2); // Number of items to display per page
+  const [itemsPerPage] = useState(isMobile() ? 1 : 2); // Number of items to display per page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = testimonies.slice(indexOfFirstItem, indexOfLastItem);
@@ -43,17 +48,17 @@ export default function Testimonials() {
     setCurrentPage((page) => page - 1);
   };
   return (
-    <Container className="px-36 my-36">
+    <Container className="px-4 lg:px-36 my-36">
       <section>
         <h2
           className={`mb-12 text-2xl font-bold uppercase ${raleway.className}`}
         >
           Testimonials
         </h2>
-        <div className="flex lg:space-x-20">
+        <div className="flex md:space-x-20">
           {currentItems.map((testimony) => (
-            <div key={testimony.id} className="max-w-[33rem] flex">
-              <div className="h-24 w-24 flex items-center justify-center p-8 border border-black mr-12">
+            <div key={testimony.id} className="lg:max-w-[33rem] flex">
+              <div className="hidden  h-24 w-24 lg:flex items-center justify-center p-8 border border-black mr-12">
                 <User2 className="text-tetiary-100 h-8 w-8 " />
               </div>
               <div className="flex flex-col">

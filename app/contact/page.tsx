@@ -15,8 +15,8 @@ export default function Page() {
     <>
       <section className="mt-36"></section>
       <Contact bgColor="bg-purple-400" />
-      <Container className="p-36 flex justify-center items-center">
-        <section className=" w-full h-screen relative">
+      <Container className="lg:p-36  mt-8 lg:mt-0 flex justify-center items-center">
+        <section className="w-full h-[400px] lg:h-screen relative">
           <Image alt="contact us" src="/images/contact-bg.jpg" fill={true} />
         </section>
       </Container>

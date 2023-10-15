@@ -1,10 +1,11 @@
 interface Work {
-  id: number;
+  id: string | number;
   title: string;
   overview: string;
   description: string;
   imageURL: string;
-  url: string;
+  slug: string;
+  liveURL: string;
 }
 
 export default Work;

@@ -24,18 +24,18 @@ export default function Services() {
   };
 
   return (
-    <Container className="px-36">
-      <section>
+    <Container className="lg:px-36 px-4">
+      <section className="">
         <h2
           className={`mb-12 text-2xl font-bold uppercase ${raleway.className}`}
         >
           services
         </h2>
-        <div className="grid grid-cols-2 gap-5 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-16">
           {currentItems.map((service, idx) => (
             <div
               key={idx}
-              className="relative w-[35rem] h-[25rem] flex flex-col justify-center items-center space-y-8 bg-black/80"
+              className="relative w-full lg:w-[35rem] h-[25rem] flex flex-col justify-center items-center space-y-8 bg-black/80"
             >
               <Image
                 src={`/images/${service.imageUrl}`}

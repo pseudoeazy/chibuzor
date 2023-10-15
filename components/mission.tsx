@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function Mission() {
   return (
-    <Container className="flex justify-center px-36">
-      <section className="w-full flex justify-between">
+    <Container className="flex justify-center lg:px-36 px-4">
+      <section className="w-full flex flex-col lg:flex-row lg:justify-between">
         <div className="flex-1 flex items-center">
           <div className="w-full lg:max-w-[28rem] ">
             <h2

@@ -29,8 +29,8 @@ const menus = [
 const year = new Date().getFullYear();
 export default function Footer() {
   return (
-    <Container className="p-36">
-      <footer className="flex space-x-36">
+    <Container className="lg:p-36 p-4 pb-8">
+      <footer className="flex md:space-x-36 justify-between md:justify-start">
         <div className="flex flex-col min-h-[22rem] ">
           <div
             className={`font-bold text-base leading-6 uppercase ${raleway.className}`}

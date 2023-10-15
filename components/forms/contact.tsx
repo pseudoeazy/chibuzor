@@ -9,15 +9,16 @@ import Success from "@/components/alerts/sucess";
 import Error from "@/components/alerts/error";
 import { raleway } from "@/styles/font";
 import { cn } from "@/lib/utils";
-
-type ContactForm = {
-  message: string;
-  email: string;
-};
+import { zodResolver } from "@hookform/resolvers/zod";
+import z from "zod";
+import { ContactSchema } from "./validation";
 
 type Props = {
   bgColor?: string;
 };
+
+type ContactForm = z.infer<typeof ContactSchema>;
+
 export default function Contact({ bgColor }: Props) {
   const [isSubmit, setIsSubmit] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -28,7 +29,8 @@ export default function Contact({ bgColor }: Props) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<ContactForm>({
+    resolver: zodResolver(ContactSchema),
     mode: "onChange",
   });
 
@@ -37,7 +39,7 @@ export default function Contact({ bgColor }: Props) {
     setIsSuccess(false);
     setIsSubmit(true);
 
-    const data = {
+    const formData = {
       service_id: process.env.EMAILJS_SERVICE_ID,
       template_id: process.env.EMAILJS_TEMPLATE_ID,
       user_id: process.env.EMAILJS_PUBLIC_KEY,
@@ -51,8 +53,7 @@ export default function Contact({ bgColor }: Props) {
 
     const url = process.env.EMAILJS_API as string;
     try {
-      //send feedback
-      const contactApi = await sendContactUs(data, url);
+      const contactApi = await sendContactUs(formData, url);
 
       if (contactApi.status !== 200) {
         setApiResponse([contactApi.data]);
@@ -73,7 +74,7 @@ export default function Contact({ bgColor }: Props) {
   return (
     <Container
       className={cn(
-        "bg-tetiary-100 min-h-screen flex items-center  justify-center",
+        "bg-tetiary-100 lg:min-h-screen flex items-center  justify-center p-4 lg:p-0",
         bgColor
       )}
     >
@@ -81,7 +82,7 @@ export default function Contact({ bgColor }: Props) {
         <h2 className={`mb-12 text-5xl font-bold  ${raleway.className}`}>
           Let&#39;s have a chat
         </h2>
-        <div className="max-w-[60rem] w-full ">
+        <div className="lg:max-w-[60rem] w-full ">
           {hasError && Array.isArray(apiResponse) && (
             <ErrorList errors={apiResponse} />
           )}
@@ -90,26 +91,15 @@ export default function Contact({ bgColor }: Props) {
           )}
           {!isSuccess && (
             <div className="relative  p-8  sm:p-12">
-              {/*@ts-ignore*/}
               <form onSubmit={handleSubmit(handleContactUs)}>
                 <div className="flex flex-col space-y-2 mb-6">
                   <input
                     type="email"
                     placeholder="Your Email *"
-                    {...register("email", {
-                      required: true,
-                      pattern:
-                        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-                    })}
+                    {...register("email")}
                     className=" w-full text-base text-body-color outline-none focus:text-dune focus:border-b-dune focus-visible:shadow-none"
                   />
-
-                  {errors.email && errors.email?.type === "required" && (
-                    <Error text="Email cannot be blank" />
-                  )}
-                  {errors.email && errors.email?.type === "pattern" && (
-                    <Error text="Invalid email address" />
-                  )}
+                  <Error>{errors.email?.message}</Error>
                 </div>
                 <div className="flex flex-col space-y-2 mb-6">
                   <textarea
@@ -120,9 +110,7 @@ export default function Contact({ bgColor }: Props) {
                     })}
                     className="h-36 w-full  resize-none  text-base  outline-none focus-visible:shadow-none"
                   ></textarea>
-                  {errors.message && errors.message?.type === "required" && (
-                    <Error text="Message cannot be blank" />
-                  )}
+                  <Error>{errors.message?.message}</Error>
                 </div>
                 <div className="flex justify-center">
                   <Button

@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Hero() {
   const router = useRouter();
   return (
-    <Container className="pl-36 mt-20 mb-36">
+    <Container className="px-4 lg:pr-0 lg:pl-36 mt-20 mb-36 ">
       <section className="flex flex-col lg:flex-row">
         <div className="flex-1">
           <div className="lg:max-w-[26.75rem] pt-8 space-y-12">
@@ -33,7 +33,7 @@ export default function Hero() {
             </Button>
           </div>
         </div>
-        <div className="flex-1 relative">
+        <div className="hidden lg:block flex-1 relative">
           <Image src="/images/banner.jpg" fill alt="banner" priority={true} />
         </div>
       </section>

@@ -3,7 +3,7 @@ interface Props {
   className?: string;
 }
 const Container: React.FC<Props> = ({ children, className }) => {
-  let containerClassName = "w-[90rem] mx-auto ";
+  let containerClassName = "w-full lg:w-[90rem] mx-auto ";
 
   if (className) {
     containerClassName += `${className}`;

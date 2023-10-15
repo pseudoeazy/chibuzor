@@ -41,14 +41,14 @@ export default function RecentBlogPost() {
   }
 
   return (
-    <Container className="flex justify-center  min-h-[22rem] px-36">
+    <Container className="flex justify-center  min-h-[22rem] lg:px-36 px-4">
       <section className="flex flex-col ">
         <div className=" w-full  my-36">
           <h2 className={`text-2xl font-bold uppercase ${raleway.className}`}>
             recent blog post
           </h2>
         </div>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {blogState === BlogDataState.LOADING ? (
             <>
               <ArticleLoader />

@@ -87,3 +87,15 @@
 .scrollbar::-webkit-scrollbar-thumb:hover {
   background: #070707;
 }
+
+.background__menu {
+  background: #c3dd4f !important;
+  min-height: 100vh;
+}
+
+.menu__hide {
+  transform: translateX(-150%);
+}
+.menu__show {
+  transform: translateX(0);
+}
