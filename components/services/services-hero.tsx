@@ -7,7 +7,7 @@ export default function ServicesHero() {
     <Container className="md:px-36 px-4 mt-36">
       <div className="max-w-[33rem]">
         <h2
-          className={`font-bold text-5xl uppercase mb-12 ${raleway.className}`}
+          className={`font-bold md:text-5xl text-3xl  uppercase mb-12 ${raleway.className}`}
         >
           I OFFER A VARIETY OF SERVICES
         </h2>

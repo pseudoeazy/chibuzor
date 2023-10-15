@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="flex-1">
           <div className="lg:max-w-[26.75rem] pt-8 space-y-12">
             <h1
-              className={`text-5xl leading-[130%] font-normal uppercase ${raleway.className}`}
+              className={`md:text-5xl text-3xl  leading-[130%] font-normal uppercase ${raleway.className}`}
             >
               I will build your vision.
             </h1>

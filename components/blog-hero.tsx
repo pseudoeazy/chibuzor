@@ -7,7 +7,7 @@ export default function BlogHero() {
     <Container className="px-4 md:px-36 mt-36">
       <div className="md:max-w-[33rem]">
         <h2
-          className={`font-bold text-5xl uppercase mb-12 ${raleway.className}`}
+          className={`font-bold md:text-5xl text-3xl uppercase mb-12 ${raleway.className}`}
         >
           Catch up on the latest in web development
         </h2>

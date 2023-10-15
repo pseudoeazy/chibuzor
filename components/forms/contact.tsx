@@ -79,7 +79,9 @@ export default function Contact({ bgColor }: Props) {
       )}
     >
       <section id="contact" className="w-full flex flex-col items-center">
-        <h2 className={`mb-12 text-5xl font-bold  ${raleway.className}`}>
+        <h2
+          className={`mb-12 md:text-5xl text-3xl font-bold  ${raleway.className}`}
+        >
           Let&#39;s have a chat
         </h2>
         <div className="lg:max-w-[60rem] w-full ">
