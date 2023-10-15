@@ -15,7 +15,7 @@ const MobileMenu = () => {
         styles.navigation
       } ${isChecked && " background__menu"} `}
     >
-      <div className="flex justify-between items-center text-white ">
+      <div className="flex justify-between items-center text-white dark:text-zinc-950">
         <Link href="/">
           {" "}
           <strong>Chibuz</strong>

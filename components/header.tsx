@@ -23,10 +23,10 @@ export default function Header() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
   return (
-    <Container>
-      <header>
-        <nav className="hidden lg:flex justify-center items-center md:pt-20">
-          <ul className="w-full md:max-w-[56rem] md:flex md:px-20 space-x-16 bg-zinc-950 dark:bg-white">
+    <Container className="flex justify-center">
+      <header className="w-full flex justify-center">
+        <nav className="w-full hidden lg:flex justify-center items-center md:pt-20">
+          <ul className="md:flex md:px-20 space-x-16 bg-zinc-950 dark:bg-white">
             {menus.map((menu) => (
               <li key={menu.path} className="flex items-center">
                 <Link

@@ -45,6 +45,8 @@ export default function AboutHero() {
               My Webstack includes <br />
               <div className="flex flex-wrap gap-1">
                 <Badge>React.js</Badge>
+                <Badge>ChatGPT</Badge>
+                <Badge>Stripe</Badge>
                 <Badge>Next.js</Badge>
                 <Badge>Sass</Badge>
                 <Badge>TailwindCSS</Badge>
