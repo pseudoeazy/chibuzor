@@ -46,6 +46,7 @@ const MobileMenu = () => {
             {menus.map((menu, idx) => (
               <li key={idx} className={`${styles.navigation__item}`}>
                 <Link
+                  onClick={handleChange}
                   href={`${menu.path}`}
                   className={`${styles.navigation__link}`}
                 >
