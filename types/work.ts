@@ -6,6 +6,8 @@ interface Work {
   imageURL: string;
   slug: string;
   liveURL: string;
+  stack: string[];
+  images: string[];
 }
 
 export default Work;

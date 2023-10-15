@@ -9,6 +9,7 @@ import Image from "next/image";
 import works from "@/constants/works";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+
 export default function Projects() {
   const pathname = usePathname();
 
@@ -34,7 +35,7 @@ export default function Projects() {
                 <CardContent className="grid gap-4 p-0">
                   <div className="relative w-full h-96">
                     <Image
-                      src="/images/project-1.jpg"
+                      src={`/images${work.imageURL}`}
                       fill={true}
                       alt="project"
                     />
@@ -49,7 +50,7 @@ export default function Projects() {
                       {work.overview}
                     </p>
                     <Button className="w-[18rem] rounded-none font-bold uppercase text-base p-5 text-center bg-tetiary-100 text-black hover:text-tetiary-100">
-                      <Link href={`projects/${work.id}`}>Read More</Link>
+                      <Link href={`projects/${work.slug}`}>Read More</Link>
                     </Button>
                   </div>
                 </CardContent>

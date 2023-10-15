@@ -22,7 +22,7 @@ const myServices = [
   {
     id: "figma-to-html",
     icon: Figma,
-    imageUrl: "chrome.jpg",
+    imageUrl: "figma.jpg",
     title: "Figma To HTML",
     path: "/services#figma-to-html",
     desc: `
@@ -31,7 +31,7 @@ const myServices = [
   {
     id: "wordpress",
     icon: Presentation,
-    imageUrl: "chrome.jpg",
+    imageUrl: "wordpress.jpg",
     title: "WordPress Plugin",
     path: "/services#wordpress",
     desc: `

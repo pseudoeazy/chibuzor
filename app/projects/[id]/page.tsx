@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 function getProjectById(id: string) {
-  return works.find((work) => work.id == id);
+  return works.find((work) => work.slug == id);
 }
 
 export const metadata: Metadata = {
@@ -23,11 +23,11 @@ export default async function Page({
 }) {
   const project = getProjectById(id);
   return (
-    <Container className="px-36 mt-36 flex flex-col items-center text-center">
+    <Container className="px-4 lg:px-36 mt-36 flex flex-col items-center text-center">
       {project && (
-        <div className="max-w-[33rem]">
+        <div className="lg:max-w-[33rem]">
           <h2
-            className={`font-bold text-5xl uppercase mb-12 ${raleway.className}`}
+            className={`font-bold text-3xl lg:text-5xl uppercase mb-12 ${raleway.className}`}
           >
             {project.title}
           </h2>
@@ -38,25 +38,15 @@ export default async function Page({
       )}
 
       {project && (
-        <section className="flex flex-col items-center space-y-36 my-36 ">
-          <div className="relative w-[640px] h-[400px]">
-            <Image src={"/images/banner.jpg"} fill={true} alt="banner" />
-          </div>
-
-          <p className={`font-light text-xl ${source_Sans_3.className}`}>
-            {project.overview}
-          </p>
-        </section>
-      )}
-      {project && (
-        <section className="flex flex-col items-center space-y-36 my-36 ">
-          <div className="relative w-[640px] h-[400px]">
-            <Image src={"/images/banner.jpg"} fill={true} alt="banner" />
-          </div>
-
-          <p className={`font-light text-xl ${source_Sans_3.className}`}>
-            {project.overview}
-          </p>
+        <section className="px-8 flex flex-col items-center space-y-36 my-36 ">
+          {project.images.map((image, idx) => (
+            <div
+              key={idx}
+              className="relative w-[16rem] lg:w-[40rem] h-[18rem] lg:h-[25rem]"
+            >
+              <Image src={`/images${image}`} fill={true} alt="banner" />
+            </div>
+          ))}
         </section>
       )}
 
