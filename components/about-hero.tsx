@@ -23,12 +23,11 @@ export default function AboutHero() {
             <p
               className={`${source_Sans_3.className} text-xl font-light leading-[140%] mb-12`}
             >
-              As an Experienced Frontend Developer, I am passionate about
-              crafting exceptional user experiences. With in-depth knowledge of
-              React and a focus on performance, I excel at creating high-quality
-              websites using HTML, CSS, and JavaScript. <br /> I am determined
-              to help you translate your ideas into professional and useable
-              platforms.
+              As an Experienced Web Developer, I am passionate about crafting
+              exceptional user experiences. With in-depth knowledge of React and
+              a focus on performance, I excel at creating high-quality websites
+              using HTML, CSS, and JavaScript. <br /> I am determined to help
+              you translate your ideas into professional and useable platforms.
             </p>
             <p
               className={`${source_Sans_3.className} text-xl font-light leading-[140%] mb-12`}
@@ -42,17 +41,17 @@ export default function AboutHero() {
             <div
               className={`${source_Sans_3.className} text-xl font-light leading-[140%] mb-12`}
             >
-              My Webstack includes <br />
+              My Webstack includes MERN/LAMP Stack
+              <br />
               <div className="flex flex-wrap gap-1">
                 <Badge>React.js</Badge>
-                <Badge>ChatGPT</Badge>
-                <Badge>Stripe</Badge>
                 <Badge>Next.js</Badge>
                 <Badge>Sass</Badge>
                 <Badge>TailwindCSS</Badge>
                 <Badge>Nest.js</Badge>
                 <Badge>Firebase</Badge>
                 <Badge>Postgres</Badge>
+                <Badge>PHP</Badge>
                 <Badge>WordPress</Badge>
               </div>
             </div>
