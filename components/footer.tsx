@@ -1,28 +1,28 @@
-import React from "react";
-import Container from "@/components/container";
-import Link from "next/link";
-import { raleway } from "@/styles/font";
-import SocialMedia from "./social-media";
+import React from 'react';
+import Container from '@/components/container';
+import Link from 'next/link';
+import { raleway } from '@/styles/font';
+import SocialMedia from './social-media';
 const menus = [
   {
-    label: "services",
-    path: "/services",
+    label: 'services',
+    path: '/services',
   },
   {
-    label: "projects",
-    path: "/projects",
+    label: 'projects',
+    path: '/projects',
   },
   {
-    label: "blog",
-    path: "/blog",
+    label: 'blog',
+    path: '/blog',
   },
   {
-    label: "about",
-    path: "/about",
+    label: 'about',
+    path: '/about',
   },
   {
-    label: "contact",
-    path: "/contact",
+    label: 'contact',
+    path: '/contact',
   },
 ];
 
@@ -43,10 +43,13 @@ export default function Footer() {
             </Link>
           </div>
           <SocialMedia />
-          <div className=" mt-auto">©Copyrights {year} Chibuz™</div>
+          <div className=" mt-auto">©Copyrights {year} Chibuz</div>
         </div>
         <div>
-          <ul className="space-y-10">
+          <h2 className="my-10 text-xl font-bold text-black dark:text-white">
+            Quick Links
+          </h2>
+          <ul className="space-y-4">
             {menus.map((menu) => (
               <li key={menu.path}>
                 <Link

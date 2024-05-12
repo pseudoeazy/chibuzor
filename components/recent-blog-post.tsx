@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import Container from "@/components/container";
-import { raleway } from "@/styles/font";
-import { ArticleLoader } from "@/components/article-loader";
-import { Blog } from "@/types/blog";
-import BlogError from "@/components/blog-error";
-import BlogData from "@/components/blog-data";
+import React, { useEffect, useState } from 'react';
+import Container from '@/components/container';
+import { raleway } from '@/styles/font';
+import { ArticleLoader } from '@/components/article-loader';
+import { Blog } from '@/types/blog';
+import BlogError from '@/components/blog-error';
+import BlogData from '@/components/blog-data';
 
 enum BlogDataState {
-  LOADING = "LOADING",
-  READY = "READY",
-  ERROR = "ERROR",
+  LOADING = 'LOADING',
+  READY = 'READY',
+  ERROR = 'ERROR',
 }
 
 export default function RecentBlogPost() {
@@ -26,6 +26,7 @@ export default function RecentBlogPost() {
       .then((res) => res.json())
       .then(
         (data: { items: Blog[] }) => {
+          console.log({ data });
           setBlogs(data.items);
           setBlogState(BlogDataState.READY);
         },
@@ -39,7 +40,7 @@ export default function RecentBlogPost() {
   if (blogState === BlogDataState.ERROR) {
     return <BlogError />;
   }
-
+  console.log({ blogs });
   return (
     <Container className="flex justify-center  min-h-[22rem] lg:px-36 px-4">
       <section className="flex flex-col ">
